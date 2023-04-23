@@ -1,0 +1,500 @@
+@import url(fonts.css);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Playfair";
+}
+
+.box {
+    width: 80%;
+    background: blue;
+    margin: 10px auto;
+    height: 250px;
+    position: relative;
+}
+
+.item {
+    width: 100px;
+    height: 100px;
+    background: red;
+    /* left: 50px; */
+    right: 50px;
+    /* top: 50px; */
+    bottom: 50px;
+    position: relative;
+    position: absolute;
+    position: fixed;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    max-width: 1140px;
+    width: 100%;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+.nav {
+    padding: 25px 0;
+    position: relative;
+}
+
+.nav__burger {
+    border: none;
+    outline: none;
+    background: #41A28E;
+    color: #fff;
+    padding: 10px;
+    font-size: 20px;
+    display: none;
+}
+
+.nav__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.menu {
+    display: flex;
+}
+
+.menu__link {
+    padding: 12px 20px;
+    font-size: 12px;
+    display: block;
+}
+
+.dropdown {
+    position: absolute;
+    left: 20px;
+    background: #FFFFFF;
+    border: 1px solid #E5E5E5;
+    border-radius: 2px;
+    min-width: 160px;
+    opacity: 0;
+    transition: 0.5s;
+    z-index: -1;
+}
+
+.menu__dropdown:hover .dropdown {
+    opacity: 1;
+    z-index: 1;
+}
+
+.menu__dropdown:hover .menu__icon {
+    transform: rotate(180deg);
+}
+
+.menu__icon {
+    transition: 0.5s;
+}
+
+.menu__dropdown {
+    position: relative; 
+}
+
+.dropdown__link {
+    font-size: 12px;
+    padding: 12px 30px;
+    display: block;
+    position: relative;
+}
+
+
+.dropdown__link::after {
+    content: '';
+    background: #E5E5E5;
+    width: 100%;
+    display: block;
+    height: 1px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+li:last-of-type .dropdown__link::after {
+    background: red;
+    display: none;
+}
+
+.nav__input {
+    border: 1px solid #41A28E;
+    outline: none;
+    padding: 6px 12px;
+    font-size: 14px;
+    font-family: "Roboto";
+    max-width: 180px;
+    width: 100%;
+}
+
+.nav__btn {
+    background: #41A28E;
+    width: 28px;
+    border: none;
+    color: #fff;
+    font-size: 15px;
+    margin-left: 4px;
+}
+
+.nav__input::placeholder {
+    color: #4B4848;
+}
+
+.nav__form {
+    display: flex;
+}
+
+.header__content {
+    background-image: url(../img/header-bg.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* height: 100%; */
+    flex-grow: 1;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.header {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.header__title {
+    font-size: 50px;
+    font-weight: 400;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 17px 61px;
+}
+
+.header__desc {
+    margin-top: 30px;
+    margin-bottom: 50px;
+    font-size: 22px;
+    text-shadow: 6px 6px 5px rgba(0, 0, 0, 0.38);
+    /* text-shadow: 25px 25px 5px blue;
+    box-shadow: inset 0px 0px 10px 0px green; */
+}
+
+.header__link {
+    background: #fff;
+    padding: 22px 34px;
+    color: #000;
+    font-size: 12px;
+    transition: 0.5s;
+}
+
+.header__link:hover {
+    background: #41A28E;
+    color: #fff;
+}
+
+.commerce {
+    margin-top: 48px;
+    margin-bottom: 72px;
+}
+
+.commerce__link {
+    border: 1px solid #41A28E;
+    height: 170px;
+    max-width: 255px;
+    width: 100%;
+    display: block;
+    position: relative;
+    overflow: hidden;
+}
+
+.commerce__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.commerce__title {
+    position: absolute;
+    left: 0;
+    bottom: -50%;
+    background: rgba(75, 72, 72, 0.7);
+    color: #fff;
+    font-size: 25px;
+    text-align: center;
+    font-weight: 400;
+    width: 100%;
+    padding: 2px;
+    transition: 0.5s;
+}
+
+.commerce__link:hover .commerce__title {
+    bottom: 0;
+}
+
+.commerce__content {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 52px;
+}
+
+.info__title {
+    font-size: 50px;
+    text-align: center;
+    margin-bottom: 18px;
+    font-weight: 400;
+}
+
+.info__desc {
+    text-align: center;
+    color: #666666;
+    font-family: "Roboto";
+    max-width: 496px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.project {
+    background-image: url(../img/jacket.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    padding-top: 120px;
+    padding-bottom: 112px;
+    color: #fff;
+}
+
+.project__desc {
+    font-size: 20px;
+    margin-bottom: 3px;
+}
+
+.project__title {
+    font-size: 50px;
+    padding-bottom: 22px;
+    font-weight: 400;
+}
+
+.project__link {
+    background: #fff;
+    color: #000;
+    font-size: 12px;
+    padding: 23px 42px;
+    display: inline-block;
+    transition: 0.5s;
+}
+
+.project__link:hover {
+    background: #41A28E;
+    color: #fff;
+}
+
+.highly {
+    margin: 50px auto;
+}
+
+.highly__card {
+    max-width: 255px;
+    width: 100%;
+}
+
+.highly__wrapper {
+    height: 340px;
+    position: relative;
+    overflow: hidden;
+}
+
+.highly__img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.highly__card:hover .highly__service {
+    bottom: 0;
+}
+
+.highly__service {
+    transition: 0.5s;
+    position: absolute;
+    left: 0;
+    bottom: -50%;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    font-size: 12px;
+    width: 100%;
+    padding: 16px 20px;
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+}
+
+.highly__add img {
+    margin-right: 15px;
+}
+
+.highly__add {
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+}
+
+.highly__like {
+    margin-right: 23px;
+}
+
+.highly__info {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: #4B484B;
+    padding: 10px 18px;
+    color: #fff;
+    font-family: "Roboto";
+    font-size: 12px;
+}
+
+.highly__title {
+    margin-top: 43px;
+    margin-bottom: 6px;
+    font-weight: 400;
+    font-size: 22px;
+}
+
+.highly__price {
+    font-size: 18px;
+    font-feature-settings: 'pnum' on, 'lnum' on, 'liga' off;
+}
+
+.highly__sale {
+    color: #666666;
+    text-decoration: line-through;
+    margin-right: 15px;
+}
+
+.highly__content {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 69px;
+}
+
+.footer {
+    background: #000;
+    color: #fff;
+    font-family: "Roboto";
+    padding-top: 36px;
+}
+
+.footer__card {
+    max-width: 255px;
+    width: 100%;
+}
+
+.footer__title {
+    font-family: "Playfair";
+    font-size: 24px;
+    font-weight: 400;
+    margin-bottom: 40px;
+}
+
+.footer__link {
+    font-size: 14px;
+    margin: 10px 0;
+    display: inline-block;
+}
+
+.footer__link_my {
+    margin: 5px 0;
+    display: flex;
+    align-items: center;
+}
+
+.footer__link_my i {
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.footer__input {
+    border: none;
+    outline: none;
+    padding: 14px 10px;
+    font-family: "Roboto";
+    font-size: 14px;
+    max-width: 200px;
+    width: 100%;
+}
+
+.footer__input::placeholder {
+    color: #909090;
+}
+
+.footer__btn {
+    border: none;
+    outline: none;
+    font-family: "Roboto";
+    background: #41A28E;
+    font-size: 16px;
+    color: #fff;
+    padding: 12px 10px;
+}
+
+.footer__form {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.footer__desc {
+    font-size: 14px;
+}
+
+.footer__sevice {
+    display: flex;
+    margin-top: 20px;
+}
+
+.footer__pay {
+    margin-right: 25px;
+    font-size: 30px;
+}
+
+.footer__content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer__design {
+    background: #121212;
+    color: #666666;
+    font-size: 18px;
+    text-align: center;
+    padding: 40px;
+    margin-top: 36px;
+}
+
+.footer__name {
+    text-shadow: 0px 0px 4px #E52D27;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #41A28E;
+    border-radius: 5px;
+}
